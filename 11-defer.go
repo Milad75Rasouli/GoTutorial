@@ -15,6 +15,11 @@ such as clean-up operations like closing
 files, network connections, or releasing
 resources.
 */
+/*
+MORE INFORMATION:
+When a function returns, its deferred calls
+are executed in last-in-first-out order
+*/
 package main
 
 import "fmt"
