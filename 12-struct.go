@@ -25,6 +25,19 @@ func main() {
 		Weight:   900.8,
 	}
 
+	s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Println(s)
+
 	fmt.Printf("%+v\n", car1)
 	fmt.Printf("%+v\n", car2)
 	fmt.Printf("%v\n", car3)
