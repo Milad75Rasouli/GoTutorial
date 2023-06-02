@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+// Another way to make a loop.
+func MyFactorial(number int32) int32 {
+	if number <= 0 {
+		return 1
+	}
+	return number * MyFactorial(number-1)
+}
+
 func main() {
 
 	for index := 0; index < 5; index++ {
@@ -30,4 +38,7 @@ func main() {
 		fmt.Printf("%f, ", counter)
 		counter -= 1.1112
 	}
+	fmt.Println("\n===============")
+	number := int32(4)
+	fmt.Println(MyFactorial(number))
 }
