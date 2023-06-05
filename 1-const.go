@@ -15,5 +15,6 @@ func add(a float32, b float32) (result float32) {
 func main() {
 	fmt.Println(MySecond)
 	fmt.Println(MyFirst)
+	// fmt.Sprint()
 	fmt.Println(add(MyFirst, MySecond))
 }
