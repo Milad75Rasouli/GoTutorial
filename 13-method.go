@@ -23,6 +23,7 @@ func (vehicle Vehicle) Drive2(name string) (result string) {
 }
 
 // none-struct
+// in this case, we dont need to * the receiver to modify our type.
 type MyFloat float32
 
 func (f MyFloat) Squer() float32 {
