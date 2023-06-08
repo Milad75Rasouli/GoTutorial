@@ -8,11 +8,16 @@ type Fruits interface {
 
 func main() {
 	show := func(f []Fruits) {
-		sum := int64(0)
-		for _, energy := range f {
-			sum += energy.Energy()
+		if len(f) == 0 /*f == nil*/ {
+			fmt.Println("<nil>")
+		} else {
+
+			sum := int64(0)
+			for _, energy := range f {
+				sum += energy.Energy()
+			}
+			fmt.Printf("The fruit has %d energy.\n", sum)
 		}
-		fmt.Printf("The fruit has %d energy.\n", sum)
 	}
 
 	myApple := []Apple{{20, 10}, {90, 10}}
@@ -22,6 +27,7 @@ func main() {
 	show([]Fruits{&myApple[0], &myApple[1]})
 	fmt.Println("Benanas energy:")
 	show([]Fruits{&myBenana[0], &myBenana[1]})
+	show([]Fruits{})
 
 }
 
