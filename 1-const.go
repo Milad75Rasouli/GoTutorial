@@ -7,6 +7,11 @@ const (
 	MySecond = 8.4
 )
 
+var (
+	Mytime int64   = 4
+	Round  float32 = 1.42
+)
+
 func add(a float32, b float32) (result float32) {
 	result = a + b
 	return
@@ -17,4 +22,5 @@ func main() {
 	fmt.Println(MyFirst)
 	// fmt.Sprint()
 	fmt.Println(add(MyFirst, MySecond))
+	fmt.Println(Mytime, Round)
 }
