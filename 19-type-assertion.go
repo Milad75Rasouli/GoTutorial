@@ -13,6 +13,6 @@ func main() {
 	w, ok := r.(string)
 	fmt.Println(w, ok)
 
-	//fmt.Println(r.(int32)) // panic
+	fmt.Println(r.(int32)) // panic
 
 }
