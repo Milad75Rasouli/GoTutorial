@@ -17,7 +17,7 @@ func (t T) M() {
 }
 
 type MM struct {
-	f float64
+	f string
 }
 
 func (m *MM) M() {
@@ -38,6 +38,15 @@ func main() {
 	var i I
 	i = T{"hello"}
 	i.M()
-	i = &MM{23.44}
+	i = &MM{"23.44"}
 	i.M()
+
+	fmt.Println("===========")
+	var e I = T{"salam salam"}
+	d := Do{e}
+	d.DoIt()
+	var y I = &MM{"10.1"}
+	d.SetQ(y)
+	d.DoIt()
+
 }
