@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// comparable is a useful constraint
+// that makes it possible to use the
+// == and != operators
 func At[T comparable](m []T, i int64) (result T, err error) {
 	err = nil
 	if int(i) >= len(m) {
