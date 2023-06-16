@@ -3,13 +3,16 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/pkg/errors"
 	// "github.com/pkg/errors"
 )
 
 func GetDir(path string) ([]string, error) {
 	files, err := os.ReadDir(path)
 	if err != nil {
-		return nil, err // errors.warp(err,"this is my error message that has been wraped")
+		return nil, errors.Wrap(err, "this is my error message that has been wraped")
+		// return nil, err
 	}
 	var files_list []string
 	for _, file := range files {
@@ -23,7 +26,7 @@ func GetDir(path string) ([]string, error) {
 }
 
 func main() {
-	files, err := GetDir("/")
+	files, err := GetDir("/33")
 	if err != nil {
 		// write the error on stderr
 		fmt.Fprintf(os.Stderr, "%v", err)
