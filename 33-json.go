@@ -44,6 +44,15 @@ func main() {
 	// fmt.Println(parsesd_input_data.Weight)
 	fmt.Printf("Parsed data is:%+v\n", parsesd_input_data)
 
+	// Another way to parse it
+	fmt.Println("=================")
+
+	// var unmarshal_result interface{}
+	var unmarshal_result map[string]any
+	if err := json.Unmarshal([]byte(input_data), &unmarshal_result); err != nil {
+		log.Fatalf("ERROR: Can Parse it: %s", err.Error())
+	}
+	fmt.Printf("Unmarshaled %+v", unmarshal_result)
 	// creating a json message
 	fmt.Println("=================")
 
@@ -62,4 +71,16 @@ func main() {
 	}
 	fmt.Printf("%s\n", json_buffer.String())
 
+	fmt.Println("=================")
+	// Another way to make a json message
+	marshal_data := struct {
+		Name  string
+		Phone string
+		Age   int32
+	}{"Alice", "555-666-777", 44}
+	marsha_data, err := json.Marshal(marshal_data)
+	if err != nil {
+		log.Fatalf("ERROR: Marshal: %s", err.Error())
+	}
+	fmt.Printf("%s", marsha_data)
 }
