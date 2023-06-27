@@ -1,3 +1,4 @@
+// https://medium.com/@MTrax/golang-the-ultimate-guide-to-dependency-injection-4556b97f9cbd#4a6d
 package main
 
 import "fmt"
